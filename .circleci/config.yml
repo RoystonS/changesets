@@ -22,9 +22,6 @@ jobs:
           command: yarn jest --ci --runInBand --coverage --reporters=default --reporters=jest-junit
           environment:
             JEST_JUNIT_OUTPUT: "reports/junit/js-test-results.xml"
-      - run:
-          name: "Upload Coverage"
-          command: yarn codecov
       - store_test_results:
           path: reports/junit
       - store_artifacts:
